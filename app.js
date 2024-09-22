@@ -41,8 +41,14 @@ displayGreeting('Christopher'); // "Hello, Christopher!" 출력
 
 function displayGreeting(name, salutation='Hello') {
     console.log(`${salutation}, ${name}`);
-  }
-  displayGreeting('Christopher');
+}
+displayGreeting('Christopher');
   // "Hello, Christopher"
-  displayGreeting('Christopher', 'Hi');
+displayGreeting('Christopher', 'Hi');
   // "Hi, Christopher"
+
+function getMessage(name) {
+    return 'Hello, ' + name + '...';
+}
+const message = getMessage('Ornella');
+document.write(message);

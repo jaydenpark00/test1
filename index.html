@@ -1,49 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
-    <link href="../assets/style.css" rel="stylesheet" type="text/css">
+    <title>Message</title>
+    <p id="intro">자기소개.</p>
+
 </head>
 <body>
-    <header class="site-header">
-        <h1 class="site-title">Turtle Ipsum</h1>
-        <p class="site-subtitle">The World's Premier Turtle Fan Club</p>
-        <img src="../assets/turtle_logo.png" alt="Turtle Ipsum Logo" class="site-logo">
-    </header>
-    
-    <nav class="main-nav" aria-label="Main Navigation">
-        <h2 class="nav-header">Resources</h2>
-        <ul class="nav-list">
-            <li class="nav-item nav-item-bull"><a href="https://www.youtube.com/watch?v=CMNry4PE93Y" aria-label="Turtle video button">"I like turtles"</a></li>
-            <li class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtle" aria-label="wikipedia link for turtle">Basic Turtle Info</a></li>
-            <li class="nav-item nav-item-bull"><a href="https://en.wikipedia.org/wiki/Turtles_(chocolate)" aria-label="wikipedia link for turtle chocolate">Chocolate Turtles</a></li>
-        </ul>
-    </nav>
-    
-    <main class="main-content">
-        <section>
-            <h2 class="page-title">Welcome to Turtle Ipsum</h2>
-            <p><a href="#">Click here</a> to learn more.</p>
-            <article class="article-text">
-                <p>Turtle ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </article>
-        </section>
-    </main>
-    
-    <footer class="footer">
-        <div class="footer-section">
-            <button class="button">Sign up for turtle news</button>
-        </div>
-        <div class="footer-section">
-            <h2 class="nav-header footer-title">Internal Pages</h2>
-            <ul class="nav-list">
-                <li class="nav-item nav-item-bull"><a href="../">Index</a></li>
-                <li class="nav-item nav-item-bull"><a href="../semantic">Semantic Example</a></li>
-            </ul>
-        </div>
-        <p class="footer-copyright">&copy; 2016 Instrument</p>
-    </footer>
+    <script>
+        // TODO: Add hello code
+        // TODO: Add setTimeout code
+        // function getMessage(name) {
+        //     return 'Hello, ' + name + '...';
+        // }
+                // 1. 템플릿 리터럴로 자기소개 만들기
+        const name = "홍길동";
+        const age = 25;
+        const job = "개발자";
+
+        // 템플릿 리터럴 방식으로 자기소개 문자열 생성
+        function getIntroduction(name, age, job) {
+            return `안녕하세요, 저는 ${name}입니다. 나이는 ${age}살이고, 직업은 ${job}입니다.`;
+        }
+
+        // 여러 함수를 생성 (자기소개)
+        const intros = [
+            () => getIntroduction("홍길동", 25, "개발자"),
+            () => getIntroduction("이순신", 35, "군인"),
+            () => getIntroduction("세종대왕", 50, "국왕")
+        ];
+
+        let currentIndex = 0;
+
+        // 3초마다 다른 함수가 실행되어 intro 텍스트 업데이트
+        setInterval(() => {
+            document.getElementById("intro").textContent = intros[currentIndex]();
+            currentIndex = (currentIndex + 1) % intros.length;
+        }, 3000);  // 3000 milliseconds = 3 seconds
+    </script>
 </body>
 </html>
