@@ -1,7 +1,7 @@
 let cardOne = 7;
 let cardTwo = 7;
 let sum = cardOne + cardTwo;
-let cardPlayer = [7, 5, 11, 4, 3];
+let cardPlayer = [7, 5, 9, 4, 3];
 let cardBank = [7, 5, 6, 4, 3];
 let Banksum = 0;
 

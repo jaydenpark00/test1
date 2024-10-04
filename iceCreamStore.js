@@ -34,7 +34,3 @@ const mostPopularFlavor = Object.keys(flavorDistribution).reduce((a, b) =>
 );
 
 console.log(mostPopularFlavor);
-
-//const maxValue = Math.max(...Object.keys(data).map(key => data[key]));
-
-//console.log(maxValue); 
