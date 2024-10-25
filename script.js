@@ -25,7 +25,6 @@ function dragElement(terrariumElement) {
 
     terrariumElement.onpointerdown = pointerDrag;
     terrariumElement.ondblclick = getHighest;
-
     function pointerDrag(e) { 
         e.preventDefault();
         console.log(e);
