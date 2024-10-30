@@ -1,0 +1,32 @@
+.highlight {
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 4px 4px 4px rgba(1, 1, 0, 0.2); /* 더 강한 그림자 */
+    
+}
+.error {
+    background-color: lightcoral;
+    border: red;
+}
+.disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    color: #999;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    background-color: lightgrey;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+}
