@@ -60,6 +60,7 @@ typedValueElement.addEventListener('input', () => {
             resultMessage.style.color =rgb(76, 175, 80); // 신기록일 때 초록색
         } else {
             resultMessage.innerText = `You finished in ${(elapsedTime / 1000).toFixed(2)} seconds.`;
+            resultMessage.style.color = 'black'; // 기본 색상
         }
 
         resultModal.classList.add('show');
@@ -91,15 +92,13 @@ closeButton.addEventListener('click', () => {
 function saveGameRecord(time) {
     // localStorage에서 기록 배열 가져오기 또는 빈 배열 생성
     const records = JSON.parse(localStorage.getItem('gameRecords')) || [];
-    const newRecord = {
-        time: time
-    };
-    records.push(newRecord); // 새로운 기록 추가
+    const newRecord = {time};
 
+    records.push(newRecord); // 새로운 기록 추가
     records.sort((a, b) => a.time - b.time);
     const topRecords = records.slice(0, 5); // 상위 5개의 기록만 유지
 
-    const isNewRecord = topRecords.length > 0 && topRecords[0].time == time;
+    const isNewRecord = topRecords.length === 0 || topRecords[0].time > time;
 
     localStorage.setItem('gameRecords', JSON.stringify(topRecords)); // localStorage에 저장
     return isNewRecord;
