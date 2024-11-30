@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((function(e,t,a){if("updateIcon"===e.action){let t={};[16,32,48,128].forEach((a=>{t[a]=function(e,t){let a=new OffscreenCanvas(t,t).getContext("2d");return a.clearRect(0,0,t,t),a.beginPath(),a.fillStyle=e,a.arc(t/2,t/2,t/2,0,2*Math.PI),a.fill(),a.getImageData(0,0,t,t)}(e.value.color,a)})),chrome.action.setIcon({imageData:t})}}));
